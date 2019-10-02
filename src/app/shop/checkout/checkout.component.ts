@@ -13,7 +13,7 @@ export class CheckoutComponent implements OnInit {
   orderSent: boolean = false;
   submitted: boolean = false;
   constructor( public order: Order,
-              private orderRepository: OrderRepository ) { }
+               private orderRepository: OrderRepository ) { }
 
   ngOnInit() {
   }

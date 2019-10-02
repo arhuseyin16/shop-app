@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 import { AppComponent } from './app.component';
 import { ShopModule } from './shop/shop.module';
@@ -15,6 +17,7 @@ import { CheckoutComponent } from './shop/checkout/checkout.component';
   imports: [
     BrowserModule,
     ShopModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot([
       {path: 'shop', component: ShopComponent},
       {path: 'cart', component: CartDetailComponent},

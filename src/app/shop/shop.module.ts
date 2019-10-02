@@ -14,7 +14,13 @@ import { CategoryListComponent } from './category-list/category-list.component';
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
     providers: [],
-    declarations: [ShopComponent, NavbarComponent, CartSummaryComponent, CartDetailComponent, CheckoutComponent, ProductListComponent, CategoryListComponent],
+    declarations: [ShopComponent,
+                   NavbarComponent,
+                   CartSummaryComponent,
+                   CartDetailComponent,
+                   CheckoutComponent,
+                   ProductListComponent,
+                   CategoryListComponent],
     exports: [ShopComponent, CartDetailComponent, CheckoutComponent]
 })
 export class ShopModule {}

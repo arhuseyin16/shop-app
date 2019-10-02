@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
   displatDetails(p: Product) {
     this.selectedProduct = p;
   }
- 
+
   hideDetails() {
     this.selectedProduct = null;
   }
