@@ -11,35 +11,35 @@
    <form *ngIf="!orderSent" #form="ngForm" (ngSubmit)="submitOrder(form)" class="m-4">
       <div class="form-group">
             <label>Name</label>
-            <input class="form-control" #name="ngModel" name="name" [(ngModel)]="order.name" required>
+            <input class="form-control"  placeholder="Name" #name="ngModel" name="name" [(ngModel)]="order.name" required>
             <span *ngIf="submitted && name.invalid" class="text-danger">
                Lütfen Adınızı Giriniz
             </span>
       </div>
       <div class="form-group">
             <label>Address</label>
-            <input class="form-control" #address="ngModel" name="address" [(ngModel)]="order.address" required>
+            <input class="form-control" placeholder="Address" #address="ngModel" name="address" [(ngModel)]="order.address" required>
             <span *ngIf="submitted && address.invalid" class="text-danger">
                   Lütfen Adresinizi Giriniz
                </span>
       </div>
       <div class="form-group">
             <label>City</label>
-            <input class="form-control" #city="ngModel" name="city" [(ngModel)]="order.city" required>
+            <input class="form-control" placeholder="City" #city="ngModel" name="city" [(ngModel)]="order.city" required>
             <span *ngIf="submitted && city.invalid" class="text-danger">
                   Lütfen Şehir Giriniz
                </span>
       </div>
       <div class="form-group">
             <label>Phone</label>
-            <input class="form-control" #phone="ngModel" name="phone" [(ngModel)]="order.phone" required>
+            <input type="number" placeholder="05XXXXXXXXX" onKeyPress="if(this.value.length===12) return false;" class="form-control" #phone="ngModel" name="phone" [(ngModel)]="order.phone" required>
             <span *ngIf="submitted && phone.invalid" class="text-danger">
                   Lütfen Telefonunuzu Giriniz
                </span>
       </div>
       <div class="form-group">
             <label>Email</label>
-            <input class="form-control" #email="ngModel" name="email" [(ngModel)]="order.email" required>
+            <input class="form-control" placeholder="E-mail" #email="ngModel" name="email" [(ngModel)]="order.email" required>
             <span *ngIf="submitted && email.invalid" class="text-danger">
                   Lütfen e-maili Giriniz
                </span>

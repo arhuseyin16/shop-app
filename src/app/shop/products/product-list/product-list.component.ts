@@ -22,11 +22,7 @@ export class ProductListComponent implements OnInit {
     this.cart.addItem(product);
     this.router.navigateByUrl('/cart');
   }
-  displayDetails(p: Product) {
+  displayDetails(p?: Product) {
     this.selectedProduct = p;
-  }
-
-  hideDetails() {
-    this.selectedProduct = null;
   }
 }
