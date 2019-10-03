@@ -1,0 +1,24 @@
+<app-product-detail [products]="displayDetails()"></app-product-detail>
+
+<div class="row">
+    <div class="col-md-4"  *ngFor="let p of products">
+        <div class="card mb-3">
+            <img src="/assets/img/{{ p.imageUrl }}" alt="{{ p.name }}">
+            <div class="cart-body">
+                <h4 class="cart-title">
+                        <a href="">
+                                {{ p.name }}d
+                        </a>
+                </h4>
+                <small class="text-muted">
+                    <i class="fa fa-try" aria-hidden="true"></i>
+                        {{p.price}}
+                </small>
+            </div>
+            <div class="card-footer text-center">
+                <button (click)="displayDetails(p)" [routerLink]="['/product-detail', p.id]" class="btn btn-outline-primary btn-sm">Details</button>
+                <button (click)="addProductToCart(p)" class="btn btn-outline-primary btn- ml-3">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

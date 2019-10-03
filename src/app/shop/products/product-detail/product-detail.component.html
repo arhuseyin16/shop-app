@@ -1,0 +1,25 @@
+
+<div class="container pt-100 mb-5">
+<div>
+  <navbar></navbar>
+</div>
+
+<div class="row border m-0 p-3 mb-4"  *ngIf="selectedProduct">
+    <div class="col-md-2">
+            <img class="img-fluid" src="/assets/img/{{ selectedProduct.imageUrl }}">
+    </div>
+    <div class="col-md-10">
+        <h5 class="card-title">
+             {{selectedProduct.name}}
+        </h5>
+        <p class="card-text">
+          {{selectedProduct.price}} TL
+        </p>
+        <p class="card-text">
+            {{selectedProduct.description}}
+        </p>
+        <button class="btn btn-danger btm-sm" (click)="cancel()">Seçimi İptal Et</button>
+        <button (click)="addProductToCart(selectedProduct)" class="btn btn-outline-primary btn- ml-3">Add To Cart</button>
+    </div>
+</div>
+</div>

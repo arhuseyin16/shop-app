@@ -7,12 +7,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { RouterModule } from '@angular/router';
-import { ProductListComponent } from './product-list/product-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductListComponent } from './products/product-list/product-list.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
+
+const routes: Routes = [
+    {path: 'product-detail/:id', component: ProductDetailComponent}
+  ];
 @NgModule({
-    imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
+    imports: [ModelModule, BrowserModule, FormsModule, RouterModule.forChild(routes)],
     providers: [],
     declarations: [ShopComponent,
                    NavbarComponent,
@@ -20,7 +25,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
                    CartDetailComponent,
                    CheckoutComponent,
                    ProductListComponent,
-                   CategoryListComponent],
-    exports: [ShopComponent, CartDetailComponent, CheckoutComponent]
+                   CategoryListComponent,
+                   ProductDetailComponent],
+    exports: [ShopComponent, CartDetailComponent, CheckoutComponent, RouterModule]
 })
 export class ShopModule {}

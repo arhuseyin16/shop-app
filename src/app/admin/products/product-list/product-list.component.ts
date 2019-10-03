@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
   }
 
-  gerProducts(): Product[] {
+  getProducts(): Product[] {
     return this.productRepository.getProducts();
   }
 
