@@ -15,15 +15,14 @@ export class ProductFormComponent implements OnInit {
   product: Product = new Product();
   constructor(private activeRoute: ActivatedRoute,
               private productRepository: ProductRepository,
-              private router: Router ) {
-    this.editing = activeRoute.snapshot.params['mode'] === 'edit';
-    if (this.editing) {
-      const pId = activeRoute.snapshot.params['id'];
-      this.product = productRepository.getProductId(pId);
-    }
-   }
+              private router: Router ) {}
 
   ngOnInit() {
+    this.editing = this.activeRoute.snapshot.params['mode'] === 'edit';
+    if (this.editing) {
+      const pId = this.activeRoute.snapshot.params['id'];
+      this.product = this.productRepository.getProductId(pId);
+    }
   }
 
   save(form: NgForm) {
